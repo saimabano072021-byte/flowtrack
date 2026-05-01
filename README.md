@@ -1,73 +1,28 @@
 # 🚀 Team Task Manager (Full-Stack)
 
-A full-stack web application to manage team projects, assign tasks, and track progress with role-based access (Admin & Member).
+A full-stack task management web application where users can create projects, assign tasks, and track progress with role-based access (Admin / Member).
 
 ---
 
-## 🌐 Live Demo
+## 🔗 Live Demo
 
-🔗 [Your Live App URL Here]
+👉 https://your-live-url.com
 
----
+## 📂 GitHub Repository
 
-## 📦 GitHub Repository
-
-🔗 [Your GitHub Repo Link Here]
+👉 https://github.com/AdiCoder0721/team-task-manager
 
 ---
 
-## 🎥 Demo Video (2–5 min)
+## ✨ Features
 
-🔗 [Your Demo Video Link Here]
-
----
-
-## 📌 Features
-
-### 🔐 Authentication
-
-* User Signup & Login
-* JWT-based authentication
-* Secure API access
-
-### 👥 Role-Based Access
-
-* **Admin**
-
-  * Create projects
-  * Assign tasks to members
-  * View all created tasks
-* **Member**
-
-  * View assigned tasks only
-  * Update task status
-
-### 📁 Project Management
-
-* Create projects (Admin only)
-* Associate tasks with projects
-
-### ✅ Task Management
-
-* Create tasks with:
-
-  * Title
-  * Description
-  * Project
-  * Assigned user
-  * Due date
-* Track task status:
-
-  * Todo
-  * In Progress
-  * Completed
-
-### 📊 Dashboard
-
-* Total tasks
-* In-progress tasks
-* Completed tasks
-* Real-time updates (auto refresh)
+* 🔐 Authentication (Signup / Login)
+* 👥 Role-Based Access (Admin & Member)
+* 📁 Project Management
+* ✅ Task Creation & Assignment
+* 📊 Dashboard with Task Stats
+* ⏳ Status Tracking (Todo / In Progress / Completed)
+* 🔄 Real-time Updates (auto refresh)
 
 ---
 
@@ -75,9 +30,9 @@ A full-stack web application to manage team projects, assign tasks, and track pr
 
 ### Frontend
 
-* React.js
+* React (Vite)
+* CSS (Custom / Responsive UI)
 * Axios
-* CSS (Custom Design System)
 
 ### Backend
 
@@ -88,75 +43,20 @@ A full-stack web application to manage team projects, assign tasks, and track pr
 
 * MongoDB (Mongoose)
 
-### Authentication
-
-* JWT (JSON Web Token)
-
-### Deployment
-
-* Railway (Backend + Database)
-* Vercel / Netlify (Frontend)
-
 ---
 
-## ⚙️ API Overview
+## ⚙️ Installation & Setup
 
-### Auth Routes
-
-* `POST /api/auth/register`
-* `POST /api/auth/login`
-
-### Project Routes
-
-* `POST /api/projects`
-* `GET /api/projects`
-
-### Task Routes
-
-* `POST /api/tasks`
-* `GET /api/tasks`
-* `PUT /api/tasks/:id`
-
----
-
-## 🧠 Architecture
-
-* RESTful API design
-* Role-based filtering handled in backend
-* Clean separation of frontend and backend
-* Reusable components and structured folders
-
----
-
-## 🔒 Role Logic
-
-* Admin sees tasks created by them
-* Member sees tasks assigned to them
-* Task filtering handled securely on backend
-
----
-
-## 📱 Responsive Design
-
-* Fully responsive UI
-* Works on:
-
-  * Desktop
-  * Tablet
-  * Mobile
-
----
-
-## 🚀 Setup Instructions
-
-### 1. Clone the repository
+### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/team-task-manager.git
+git clone https://github.com/AdiCoder0721/team-task-manager.git
 cd team-task-manager
 ```
 
-### 2. Backend Setup
+---
+
+### 2️⃣ Backend Setup
 
 ```bash
 cd backend
@@ -164,7 +64,9 @@ npm install
 npm run dev
 ```
 
-### 3. Frontend Setup
+---
+
+### 3️⃣ Frontend Setup
 
 ```bash
 cd frontend
@@ -172,34 +74,64 @@ npm install
 npm run dev
 ```
 
-### 4. Environment Variables
+---
+
+## 🔐 Environment Variables
 
 Create `.env` file in backend:
 
-```
+```env
+PORT=5000
 MONGO_URI=your_mongodb_url
 JWT_SECRET=your_secret_key
 ```
 
 ---
 
-## 📈 Future Improvements
+## 📸 Screenshots
 
-* Real-time updates using WebSockets
-* Task comments & attachments
-* Email notifications
-* Kanban board view
+*<img width="1919" height="930" alt="image" src="https://github.com/user-attachments/assets/b76c4af2-b99c-4d53-ae9b-f47afb74e176" />
+
+* <img width="1919" height="924" alt="image" src="https://github.com/user-attachments/assets/de1e956c-5bbb-4794-ae80-c9d8970794b4" />
+
+* <img width="1919" height="926" alt="image" src="https://github.com/user-attachments/assets/8c03c240-5a60-4ae3-a533-5f00da9ed2f0" />
+
+
+
+
+---
+
+## 🚀 Deployment
+
+Deployed on Railway:
+
+* Backend: Railway
+* Frontend: Railway / Vercel
+
+---
+
+## 🎥 Demo Video
+
+👉 Add your 2–5 min demo video link here
+
+---
+
+## 📌 Project Highlights
+
+* Clean UI & responsive design
+* Proper API structure
+* Role-based authorization
+* Scalable folder structure
 
 ---
 
 ## 👨‍💻 Author
 
 **Aditya Yadav**
+GitHub: https://github.com/AdiCoder0721
 
 ---
 
-## ⭐ Notes
+## ⭐ If you like this project
 
-This project was built as part of a technical assessment to demonstrate full-stack development skills, clean architecture, and role-based system design.
-
----
+Give it a star ⭐ on GitHub!
