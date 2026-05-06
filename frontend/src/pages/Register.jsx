@@ -43,9 +43,9 @@ export default function Register() {
       <div className="auth-container">
         <div className="auth-card">
           <div className="auth-header">
-            <div className="auth-logo">T</div>
-            <h1 className="auth-title">Create account</h1>
-            <p className="auth-subtitle">Start managing your tasks today</p>
+            <div className="auth-logo">F</div>
+            <h1 className="auth-title">Create your FlowTrack account</h1>
+            <p className="auth-subtitle">Start managing your work with a professional task system</p>
           </div>
 
           <div className="auth-form">

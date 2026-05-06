@@ -34,7 +34,7 @@ exports.getTasks = async (req, res) => {
     }
 
     const tasks = await Task.find(query)
-      .populate("project", "name")
+      .populate("project", "name description")
       .populate("assignedTo", "name email")
       .populate("createdBy", "name");
 

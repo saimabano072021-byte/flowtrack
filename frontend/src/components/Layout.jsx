@@ -49,9 +49,16 @@ export default function Layout({ children }) {
       <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
         <div className="sidebar-header">
           <div className="logo">
-            <div className="logo-icon">T</div>
-            <span className="logo-text">TaskManager</span>
+            <div className="logo-icon">F</div>
+            <span className="logo-text">FlowTrack</span>
           </div>
+          <button 
+            className="sidebar-close-btn"
+            onClick={() => setSidebarOpen(false)}
+            title="Close sidebar"
+          >
+            ✕
+          </button>
         </div>
 
         <nav className="sidebar-nav">
@@ -94,7 +101,7 @@ export default function Layout({ children }) {
           >
             ☰
           </button>
-          <h1 className="page-title">TaskManager</h1>
+          <h1 className="page-title">FlowTrack</h1>
           <div style={{ width: 40 }}></div>
         </div>
         

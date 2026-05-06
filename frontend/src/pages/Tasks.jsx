@@ -132,26 +132,20 @@ export default function Tasks() {
           )}
         </div>
 
-        <div style={{
-          display: "flex",
-          gap: "var(--space-sm)",
-          marginBottom: "var(--space-lg)",
-          borderBottom: "1px solid var(--gray-200)",
-          paddingBottom: "var(--space-md)"
-        }}>
-         {["all", "todo", "in-progress", "done"].map((status) => (
-  <button
-    key={status}
-    onClick={() => setFilter(status)}
-    className={`filter-btn ${filter === status ? "active" : ""}`}
-  >
-  {status === "all"
-  ? "All Tasks"
-  : status === "done"
-  ? "Completed"
-  : formatStatus(status)}
-  </button>
-))}
+        <div className="task-filter-bar">
+          {['all', 'todo', 'in-progress', 'done'].map((status) => (
+            <button
+              key={status}
+              onClick={() => setFilter(status)}
+              className={`filter-btn ${filter === status ? "active" : ""}`}
+            >
+              {status === 'all'
+                ? 'All Tasks'
+                : status === 'done'
+                ? 'Completed'
+                : formatStatus(status)}
+            </button>
+          ))}
         </div>
 
         {loading ? (
@@ -169,8 +163,21 @@ export default function Tasks() {
                   {formatStatus(task.status)}
                 </span>
 
+                {task.project && (
+                  <div className="task-project-section">
+                    <div className="project-divider"></div>
+                    <div className="project-info">
+                      <h5 className="project-name">{task.project?.name}</h5>
+                      {task.project?.description && (
+                        <p className="project-description">{task.project?.description}</p>
+                      )}
+                    </div>
+                  </div>
+                )}
+
                 {user?.role === "member" && (
                   <select
+                    className="task-status-select"
                     value={task.status}
                     onChange={async (e) => {
                       await API.patch(`/tasks/${task._id}`, {
@@ -208,6 +215,7 @@ export default function Tasks() {
               />
 
               <select
+                className="form-input"
                 value={form.project}
                 onChange={(e) => setForm({ ...form, project: e.target.value })}
               >
@@ -221,6 +229,7 @@ export default function Tasks() {
 
               {/* 🔥 ONLY ADDITION */}
               <select
+                className="form-input"
                 value={form.assignedTo}
                 onChange={(e) =>
                   setForm({ ...form, assignedTo: e.target.value })

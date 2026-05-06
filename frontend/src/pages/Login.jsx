@@ -36,9 +36,9 @@ export default function Login() {
       <div className="auth-container">
         <div className="auth-card">
           <div className="auth-header">
-            <div className="auth-logo">T</div>
-            <h1 className="auth-title">Welcome back</h1>
-            <p className="auth-subtitle">Enter your credentials to access your account</p>
+            <div className="auth-logo">F</div>
+            <h1 className="auth-title">Sign in to FlowTrack</h1>
+            <p className="auth-subtitle">Enter your credentials to access your FlowTrack workspace</p>
           </div>
 
           <div className="auth-form">

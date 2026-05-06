@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from "react";
 import API from "../api/axios";
 import Layout from "../components/Layout";
 
+
 export default function Dashboard() {
   const [stats, setStats] = useState({ total: 0, inProgress: 0, completed: 0 });
   const [tasks, setTasks] = useState([]);
@@ -139,17 +140,8 @@ const [filter, setFilter] = useState("all");
       <div className="animate-fade-in">
 
         {/* HEADER */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: 24,
-          }}
-        >
-          <h2 style={{ fontSize: 20, fontWeight: 700 }}>
-            Dashboard Overview
-          </h2>
+        <div className="dashboard-header">
+          <h2>Dashboard Overview</h2>
 
           {isAdmin && (
             <button
@@ -181,34 +173,24 @@ const [filter, setFilter] = useState("all");
         </div>
 
         {/* QUICK ACTION */}
-        <div
-          style={{
-            background: "var(--bg-secondary)",
-            borderRadius: "var(--radius-lg)",
-            padding: "var(--space-lg)",
-            border: "1px solid var(--gray-100)",
-          }}
-        >
-          <h3
-            style={{
-              fontSize: 16,
-              fontWeight: 600,
-              marginBottom: 10,
-            }}
-          >
-            Quick Actions
-          </h3>
+      
+<div className="quick-actions-card">
+  <h3>Quick Actions</h3>
 
-          <div style={{ display: "flex", gap: 10 }}>
-            <a href="/tasks" className="btn btn-primary">
-              + New Task
-            </a>
+  <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
 
-            <a href="/tasks" className="btn btn-secondary">
-              View Tasks
-            </a>
-          </div>
-        </div>
+    {isAdmin && (
+      <a href="/tasks" className="btn btn-primary">
+        + New Task
+      </a>
+    )}
+
+    <a href="/tasks" className="btn btn-secondary">
+      View Tasks
+    </a>
+
+  </div>
+</div>
 
         {/* TASK FILTER */}
 <div style={{ display: "flex", gap: "8px", marginTop: 20 }}>
@@ -230,29 +212,30 @@ const [filter, setFilter] = useState("all");
 </div>
 
 {/* TASK LIST */}
-<div style={{ marginTop: 20 }}>
+<div className="dashboard-tasks-list">
   {filteredTasks.length === 0 ? (
-    <p style={{ color: "#666" }}>No tasks found</p>
+    <p className="no-tasks-message">No tasks found</p>
   ) : (
     filteredTasks.map((task) => (
-      <div
-        key={task._id}
-        style={{
-          padding: 16,
-          border: "1px solid #eee",
-          borderRadius: 10,
-          marginBottom: 12,
-          background: "#fff",
-        }}
-      >
-        <h4 style={{ margin: 0 }}>{task.title}</h4>
+      <div key={task._id} className="dashboard-task-card">
+        <div className="task-content">
+          <h4 className="task-title">{task.title}</h4>
+          <p className="task-description">{task.description}</p>
+          <div className="task-status">
+            Status: <span className={`status-text ${task.status}`}>{task.status}</span>
+          </div>
 
-        <p style={{ margin: "6px 0", color: "#777" }}>
-          {task.description}
-        </p>
-
-        <div style={{ fontSize: 12 }}>
-          Status: <b>{task.status}</b>
+          {task.project && (
+            <div className="task-project-section">
+              <div className="project-divider"></div>
+              <div className="project-info">
+                <h5 className="project-name">{task.project?.name}</h5>
+                {task.project?.description && (
+                  <p className="project-description">{task.project?.description}</p>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         {user?.role === "member" && (
@@ -264,7 +247,7 @@ const [filter, setFilter] = useState("all");
               });
               fetchStats();
             }}
-            style={{ marginTop: 8 }}
+            className="task-status-select"
           >
             <option value="todo">Todo</option>
             <option value="in-progress">In Progress</option>
