@@ -180,7 +180,7 @@ export default function Tasks() {
                     className="task-status-select"
                     value={task.status}
                     onChange={async (e) => {
-                      await API.patch(`/tasks/${task._id}`, {
+                      await API.put(`/tasks/${task._id}`, {
                         status: e.target.value,
                       });
                       fetchTasks();
@@ -188,7 +188,7 @@ export default function Tasks() {
                   >
                     <option value="todo">Todo</option>
                     <option value="in-progress">In Progress</option>
-                    <option value="completed">Completed</option>
+                    <option value="done">Completed</option>
                   </select>
                 )}
               </div>
