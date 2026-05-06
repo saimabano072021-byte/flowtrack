@@ -1,137 +1,227 @@
-# 🚀 Team Task Manager (Full-Stack)
+🚀 FlowTrack – Full Stack Team Task Manager
 
-A full-stack task management web application where users can create projects, assign tasks, and track progress with role-based access (Admin / Member).
+FlowTrack is a modern full-stack team collaboration and task management platform built to help teams organize projects, assign tasks, and track work progress efficiently using role-based access control.
 
----
+The application provides separate dashboards and permissions for Admins and Members, allowing secure and structured team management.
 
-## 🔗 Live Demo
+🌐 Live :-https://teamtaskmanagerweb.netlify.app/
 
-👉 https://your-live-url.com
+🔗 Frontend
 
-## 📂 GitHub Repository
+https://app.netlify.com/projects/teamtaskmanagerweb/overview
 
-👉 https://github.com/AdiCoder0721/team-task-manager
+🔗 Backend API
 
----
+https://flowtrack-production-8558.up.railway.app
 
-## ✨ Features
+📌 Features
+🔐 Authentication & Authorization
+User Registration
+User Login
+JWT-based authentication
+Protected API routes
+Persistent login sessions
+Secure role-based access control
+👥 Role-Based Access System
+👨‍💼 Admin Features
 
-* 🔐 Authentication (Signup / Login)
-* 👥 Role-Based Access (Admin & Member)
-* 📁 Project Management
-* ✅ Task Creation & Assignment
-* 📊 Dashboard with Task Stats
-* ⏳ Status Tracking (Todo / In Progress / Completed)
-* 🔄 Real-time Updates (auto refresh)
+Admins can:
 
----
+Create projects
+Assign tasks to members
+View all created tasks
+Monitor task progress
+Manage task statuses
+Track dashboard analytics
+👨‍💻 Member Features
 
-## 🛠 Tech Stack
+Members can:
 
-### Frontend
+View assigned tasks only
+Update task status
+Access project details
+Track personal task progress
+📁 Project Management
 
-* React (Vite)
-* CSS (Custom / Responsive UI)
-* Axios
+Admins can:
 
-### Backend
+Create projects
+Add project descriptions
+Organize tasks under projects
 
-* Node.js
-* Express.js
+Each task is connected with a project and displays:
 
-### Database
+Project name
+Project description
 
-* MongoDB (Mongoose)
+inside the task card.
 
----
+✅ Task Management System
+Task Features
+Create tasks
+Assign tasks to specific users
+Set task descriptions
+Connect tasks to projects
+Track task progress
+Task Status Workflow
 
-## ⚙️ Installation & Setup
+Tasks move through different states:
 
-### 1️⃣ Clone the repository
+Todo
+In Progress
+Completed
 
-```bash
-git clone https://github.com/AdiCoder0721/team-task-manager.git
-cd team-task-manager
-```
+Members can update task statuses directly from:
 
----
+Dashboard
+Tasks page
+📊 Dashboard Features
 
-### 2️⃣ Backend Setup
+The dashboard provides real-time task insights including:
 
-```bash
+Total tasks
+In-progress tasks
+Completed tasks
+Task filtering system
+Dynamic task cards
+Project-linked task display
+🎨 Modern Responsive UI
+
+FlowTrack includes a modern dashboard interface with:
+
+Dark premium theme
+Glassmorphism-inspired UI
+Responsive sidebar
+Mobile navigation support
+Responsive task cards
+Professional dropdown menus
+Adaptive layouts for all screen sizes
+📱 Fully Responsive Design
+
+The application is optimized for:
+
+Mobile phones
+Tablets
+Laptops
+Desktop screens
+
+Responsive features include:
+
+Collapsible sidebar
+Mobile hamburger navigation
+Responsive grid system
+Adaptive cards
+Optimized spacing and typography
+🛠️ Tech Stack
+Frontend
+React.js
+Vite
+Axios
+React Router
+Custom CSS
+Backend
+Node.js
+Express.js
+MongoDB
+Mongoose
+JWT Authentication
+Deployment
+Frontend → Netlify
+Backend → Railway
+📂 Project Structure
+flowtrack/
+│
+├── backend/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── config/
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── assets/
+│   └── index.html
+│
+└── README.md
+⚙️ Installation & Local Setup
+1️⃣ Clone Repository
+git clone https://github.com/saimabano072021-byte/flowtrack.git
+cd flowtrack
+🔧 Backend Setup
+Navigate to backend folder
 cd backend
+Install dependencies
 npm install
-npm run dev
-```
+Create .env file
 
----
+Inside the backend folder create:
 
-### 3️⃣ Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
----
-
-## 🔐 Environment Variables
-
-Create `.env` file in backend:
-
-```env
 PORT=5000
-MONGO_URI=your_mongodb_url
+MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-```
+Start backend server
+npm start
 
----
+Backend will run on:
 
-## 📸 Screenshots
+http://localhost:5000
+💻 Frontend Setup
+Navigate to frontend folder
+cd frontend
+Install dependencies
+npm install
+Start frontend server
+npm run dev
 
-*<img width="1919" height="930" alt="image" src="https://github.com/user-attachments/assets/b76c4af2-b99c-4d53-ae9b-f47afb74e176" />
+Frontend will run on:
 
-* <img width="1919" height="924" alt="image" src="https://github.com/user-attachments/assets/de1e956c-5bbb-4794-ae80-c9d8970794b4" />
+http://localhost:5173
+🔒 API Security
+JWT token verification
+Protected routes middleware
+Role-based authorization
+Secure task access filtering
+📈 Future Improvements
 
-* <img width="1919" height="926" alt="image" src="https://github.com/user-attachments/assets/8c03c240-5a60-4ae3-a533-5f00da9ed2f0" />
+Potential future enhancements include:
 
+Real-time notifications
+WebSocket integration
+Drag & Drop Kanban board
+File attachments
+Team chat system
+Email notifications
+Activity logs
+Search & filtering improvements
+🚀 Deployment Workflow
+Backend Deployment
+Railway used for backend hosting
+Environment variables configured securely
+Frontend Deployment
+Netlify used for frontend hosting
+GitHub auto-deployment enabled
+👨‍💻 Author
+Saima Bano
 
+GitHub:
+https://github.com/saimabano072021-byte/flowtrack
 
+⭐ Conclusion
 
----
+FlowTrack demonstrates:
 
-## 🚀 Deployment
+Full-stack web development
+REST API architecture
+Authentication & Authorization
+Role-based access control
+Responsive dashboard UI
+Real-world project structure
+Deployment workflow
 
-Deployed on Railway:
-
-* Backend: Railway
-* Frontend: Railway / Vercel
-
----
-
-## 🎥 Demo Video
-
-👉 Add your 2–5 min demo video link here
-
----
-
-## 📌 Project Highlights
-
-* Clean UI & responsive design
-* Proper API structure
-* Role-based authorization
-* Scalable folder structure
-
----
-
-## 👨‍💻 Author
-
-**Aditya Yadav**
-GitHub: https://github.com/AdiCoder0721
-
----
-
-## ⭐ If you like this project
-
-Give it a star ⭐ on GitHub!
+This project was developed as part of a technical assignment to showcase practical full-stack development skills.
